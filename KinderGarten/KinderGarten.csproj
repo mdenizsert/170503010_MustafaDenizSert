@@ -183,10 +183,10 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentInActivityDto.cs" />
     <Compile Include="Entities\Teacher.cs" />
-    <Compile Include="Entities\UI\AdminPage.cs">
+    <Compile Include="UI\AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entities\UI\AdminPage.Designer.cs">
+    <Compile Include="UI\AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -209,6 +209,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
