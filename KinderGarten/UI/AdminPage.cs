@@ -16,13 +16,17 @@ namespace KinderGarten.Entities.UI
         private EfAdminDal _adminDal;
         private EfClassDal _classDal;
         private EfStudentDal _studentDal;
+        private EfTeacherDal _teacherDal;
+        private EfActivityDal _activityDal;
         public AdminPage()
         {
             InitializeComponent();
 
+            _teacherDal = new EfTeacherDal();
             _adminDal = new EfAdminDal();
             _classDal = new EfClassDal();
             _studentDal = new EfStudentDal();
+            _activityDal = new EfActivityDal();
         }
 
         private void addStudentbtn_Click(object sender, EventArgs e)
@@ -44,8 +48,77 @@ namespace KinderGarten.Entities.UI
             };
 
             _studentDal.Add(student);
-            updateComboboxes();
+            
         }
+
+       
+
+        private void addTeacherbtn_Click(object sender, EventArgs e)
+        {
+            var teacher = new Entities.Teacher
+            {
+                Name = teacherNametxt.Text,
+                LastName = teacherLastnametxt.Text,
+                Address = teacherAddresstxt.Text,
+                PhoneNumber = teacherPhonetxt.Text,
+                BirthDate = teacherBirthdatetxt.Text,
+                Password = teacherPasswordtxt.Text,
+                Email = teacherEmailtxt.Text
+            };
+
+            _teacherDal.Add(teacher);
+            updateClassCombobox();
+        }
+
+
+        
+
+        private void addAdminbtn_Click(object sender, EventArgs e)
+        {
+            var admin = new Entities.Admin
+            {
+                Name = adminNametxt.Text,
+                LastName = adminLastnametxt.Text,
+                Address = adminAddresstxt.Text,
+                PhoneNumber = adminPhonetxt.Text,
+                BirthDate = adminBirthdatetxt.Text,
+                Password = adminPasswordtxt.Text,
+                Email = adminEmailtxt.Text
+            };
+
+            _adminDal.Add(admin);
+        }
+
+
+       
+
+        private void addActivitybtn_Click(object sender, EventArgs e)
+        {
+            var activity = new Entities.Activity
+            {
+                Content = activityContenttxt.Text,
+                AgeGroup = activityAgeGrouptxt.Text,
+                Period = activityPeriodtxt.Text
+            };
+
+            _activityDal.Add(activity);
+        }
+
+        
+
+        private void addClassbtn_Click(object sender, EventArgs e)
+        {
+            var addingClass = new Entities.Class
+            {
+                Name = classNametxt.Text,
+                TeacherId = getTeacherId(classLehrernamecmb.Text)
+            };
+
+            _classDal.Add(addingClass);
+            updateStudentCombobox();
+
+        }
+
 
         private int getClassId(string className)
         {
@@ -54,7 +127,14 @@ namespace KinderGarten.Entities.UI
             return classId;
         }
 
-        private void updateComboboxes()
+        private int getTeacherId(string teacherName)
+        {
+            var thisTeacher = _teacherDal.Get(t => t.Name == teacherName);
+            var teacherId = thisTeacher.Id;
+            return teacherId;
+        }
+
+        private void updateStudentCombobox()
         {
             studentClasscmb.Items.Clear();
 
@@ -66,10 +146,23 @@ namespace KinderGarten.Entities.UI
             }
         }
 
+        private void updateClassCombobox()
+        {
+            classLehrernamecmb.Items.Clear();
+
+            var teachers = _teacherDal.GetAll();
+
+            foreach (var teacher in teachers)
+            {
+                var totalName = teacher.Name + " " + teacher.LastName;
+                classLehrernamecmb.Items.Add(totalName);
+            }
+        }
+
 
         private int ageCalculator(string birthDate)
         {
-            bool success = Int32.TryParse(birthDate, out int date);    
+            bool success = Int32.TryParse(birthDate, out int date);
 
             if (success)
             {

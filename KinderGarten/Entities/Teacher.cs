@@ -15,5 +15,6 @@ namespace KinderGarten.Entities
         public string PhoneNumber { get; set; }
         public string BirthDate { get; set; }
         public string Password { get; set; }
+        public string Email { get; set; }
     }
 }
