@@ -29,7 +29,7 @@ namespace KinderGarten.Entities.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.Logout = new System.Windows.Forms.Button();
+            this.logoutbtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.studentClasscmb = new System.Windows.Forms.ComboBox();
             this.addStudentbtn = new System.Windows.Forms.Button();
@@ -93,26 +93,33 @@ namespace KinderGarten.Entities.UI
             this.label31 = new System.Windows.Forms.Label();
             this.activityContenttxt = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.classLehrernamecmb = new System.Windows.Forms.ComboBox();
             this.addClassbtn = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.classNametxt = new System.Windows.Forms.TextBox();
-            this.classLehrernamecmb = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.classDetailbtn = new System.Windows.Forms.Button();
+            this.activityDetailbtn = new System.Windows.Forms.Button();
+            this.teacherDetailbtn = new System.Windows.Forms.Button();
+            this.adminDetailbtn = new System.Windows.Forms.Button();
+            this.studentDetailbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Logout
+            // logoutbtn
             // 
-            this.Logout.Location = new System.Drawing.Point(1566, 745);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(124, 45);
-            this.Logout.TabIndex = 0;
-            this.Logout.Text = "Ausloggen";
-            this.Logout.UseVisualStyleBackColor = true;
+            this.logoutbtn.Location = new System.Drawing.Point(1298, 639);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(281, 80);
+            this.logoutbtn.TabIndex = 0;
+            this.logoutbtn.Text = "Ausloggen";
+            this.logoutbtn.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -710,12 +717,20 @@ namespace KinderGarten.Entities.UI
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.classNametxt);
-            this.groupBox5.Location = new System.Drawing.Point(674, 430);
+            this.groupBox5.Location = new System.Drawing.Point(507, 430);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(402, 203);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Klasse Hİnzufügen";
+            // 
+            // classLehrernamecmb
+            // 
+            this.classLehrernamecmb.FormattingEnabled = true;
+            this.classLehrernamecmb.Location = new System.Drawing.Point(214, 62);
+            this.classLehrernamecmb.Name = "classLehrernamecmb";
+            this.classLehrernamecmb.Size = new System.Drawing.Size(144, 24);
+            this.classLehrernamecmb.TabIndex = 22;
             // 
             // addClassbtn
             // 
@@ -753,27 +768,85 @@ namespace KinderGarten.Entities.UI
             this.classNametxt.Size = new System.Drawing.Size(144, 22);
             this.classNametxt.TabIndex = 0;
             // 
-            // classLehrernamecmb
+            // groupBox6
             // 
-            this.classLehrernamecmb.FormattingEnabled = true;
-            this.classLehrernamecmb.Location = new System.Drawing.Point(214, 62);
-            this.classLehrernamecmb.Name = "classLehrernamecmb";
-            this.classLehrernamecmb.Size = new System.Drawing.Size(144, 24);
-            this.classLehrernamecmb.TabIndex = 22;
+            this.groupBox6.Controls.Add(this.classDetailbtn);
+            this.groupBox6.Controls.Add(this.activityDetailbtn);
+            this.groupBox6.Controls.Add(this.teacherDetailbtn);
+            this.groupBox6.Controls.Add(this.adminDetailbtn);
+            this.groupBox6.Controls.Add(this.studentDetailbtn);
+            this.groupBox6.Location = new System.Drawing.Point(978, 430);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(601, 203);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Detailseiten";
+            // 
+            // classDetailbtn
+            // 
+            this.classDetailbtn.Location = new System.Drawing.Point(425, 29);
+            this.classDetailbtn.Name = "classDetailbtn";
+            this.classDetailbtn.Size = new System.Drawing.Size(146, 58);
+            this.classDetailbtn.TabIndex = 24;
+            this.classDetailbtn.Text = "Klasse Detail";
+            this.classDetailbtn.UseVisualStyleBackColor = true;
+            this.classDetailbtn.Click += new System.EventHandler(this.classDetailbtn_Click);
+            // 
+            // activityDetailbtn
+            // 
+            this.activityDetailbtn.Location = new System.Drawing.Point(244, 109);
+            this.activityDetailbtn.Name = "activityDetailbtn";
+            this.activityDetailbtn.Size = new System.Drawing.Size(146, 58);
+            this.activityDetailbtn.TabIndex = 23;
+            this.activityDetailbtn.Text = "Aktivitätsdetail";
+            this.activityDetailbtn.UseVisualStyleBackColor = true;
+            this.activityDetailbtn.Click += new System.EventHandler(this.activityDetailbtn_Click);
+            // 
+            // teacherDetailbtn
+            // 
+            this.teacherDetailbtn.Location = new System.Drawing.Point(244, 29);
+            this.teacherDetailbtn.Name = "teacherDetailbtn";
+            this.teacherDetailbtn.Size = new System.Drawing.Size(146, 58);
+            this.teacherDetailbtn.TabIndex = 22;
+            this.teacherDetailbtn.Text = "Lehrerdetails";
+            this.teacherDetailbtn.UseVisualStyleBackColor = true;
+            this.teacherDetailbtn.Click += new System.EventHandler(this.teacherDetailbtn_Click);
+            // 
+            // adminDetailbtn
+            // 
+            this.adminDetailbtn.Location = new System.Drawing.Point(52, 108);
+            this.adminDetailbtn.Name = "adminDetailbtn";
+            this.adminDetailbtn.Size = new System.Drawing.Size(146, 58);
+            this.adminDetailbtn.TabIndex = 21;
+            this.adminDetailbtn.Text = "Admin-Details";
+            this.adminDetailbtn.UseVisualStyleBackColor = true;
+            this.adminDetailbtn.Click += new System.EventHandler(this.adminDetailbtn_Click);
+            // 
+            // studentDetailbtn
+            // 
+            this.studentDetailbtn.Location = new System.Drawing.Point(52, 29);
+            this.studentDetailbtn.Name = "studentDetailbtn";
+            this.studentDetailbtn.Size = new System.Drawing.Size(146, 58);
+            this.studentDetailbtn.TabIndex = 20;
+            this.studentDetailbtn.Text = "Studentendetail";
+            this.studentDetailbtn.UseVisualStyleBackColor = true;
+            this.studentDetailbtn.Click += new System.EventHandler(this.studentDetailbtn_Click);
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1702, 802);
+            this.ClientSize = new System.Drawing.Size(1624, 729);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Logout);
+            this.Controls.Add(this.logoutbtn);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
+            this.Load += new System.EventHandler(this.AdminPage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -784,13 +857,14 @@ namespace KinderGarten.Entities.UI
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.Button logoutbtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox studentNametxt;
         private System.Windows.Forms.Label label2;
@@ -859,5 +933,11 @@ namespace KinderGarten.Entities.UI
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox classNametxt;
         private System.Windows.Forms.ComboBox classLehrernamecmb;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button classDetailbtn;
+        private System.Windows.Forms.Button activityDetailbtn;
+        private System.Windows.Forms.Button teacherDetailbtn;
+        private System.Windows.Forms.Button adminDetailbtn;
+        private System.Windows.Forms.Button studentDetailbtn;
     }
 }

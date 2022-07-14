@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KinderGarten.DataAccess.Concrete;
+using KinderGarten.UI;
 
 namespace KinderGarten.Entities.UI
 {
@@ -122,14 +123,14 @@ namespace KinderGarten.Entities.UI
 
         private int getClassId(string className)
         {
-            var thisClass = _classDal.Get(c => c.Name == className);
+            var thisClass = _classDal.Get(c => c.Name  == className);
             var classId = thisClass.Id;
             return classId;
         }
 
         private int getTeacherId(string teacherName)
         {
-            var thisTeacher = _teacherDal.Get(t => t.Name == teacherName);
+            var thisTeacher = _teacherDal.Get(t => t.Name + " " + t.LastName == teacherName);
             var teacherId = thisTeacher.Id;
             return teacherId;
         }
@@ -174,6 +175,47 @@ namespace KinderGarten.Entities.UI
                 Console.WriteLine("Input string is invalid.");
                 return -1;
             }
+        }
+
+        private void studentDetailbtn_Click(object sender, EventArgs e)
+        {
+            var form = new StudentDetailPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void teacherDetailbtn_Click(object sender, EventArgs e)
+        {
+            var form = new TeacherDetailPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void adminDetailbtn_Click(object sender, EventArgs e)
+        {
+            var form = new AdminDetailPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void activityDetailbtn_Click(object sender, EventArgs e)
+        {
+            var form = new ActivityDetailPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void classDetailbtn_Click(object sender, EventArgs e)
+        {
+            var form = new ClassDetailPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void AdminPage_Load(object sender, EventArgs e)
+        {
+            updateClassCombobox();
+            updateStudentCombobox();
         }
     }
 }

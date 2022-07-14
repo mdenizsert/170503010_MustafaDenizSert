@@ -183,6 +183,18 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentInActivityDto.cs" />
     <Compile Include="Entities\Teacher.cs" />
+    <Compile Include="UI\ActivityDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ActivityDetailPage.Designer.cs">
+      <DependentUpon>ActivityDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminDetailPage.Designer.cs">
+      <DependentUpon>AdminDetailPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +209,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ClassDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ClassDetailPage.Designer.cs">
+      <DependentUpon>ClassDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OneActivityDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OneActivityDetail.Designer.cs">
+      <DependentUpon>OneActivityDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentDetailPage.Designer.cs">
+      <DependentUpon>StudentDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TeacherDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TeacherDetailPage.Designer.cs">
+      <DependentUpon>TeacherDetailPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,8 +245,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ActivityDetailPage.resx">
+      <DependentUpon>ActivityDetailPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OneActivityDetail.resx">
+      <DependentUpon>OneActivityDetail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
