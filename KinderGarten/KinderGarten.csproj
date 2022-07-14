@@ -233,11 +233,29 @@
     <Compile Include="UI\StudentDetailPage.Designer.cs">
       <DependentUpon>StudentDetailPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\StudentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentPage.Designer.cs">
+      <DependentUpon>StudentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TeacherActivityDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TeacherActivityDetail.Designer.cs">
+      <DependentUpon>TeacherActivityDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TeacherDetailPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\TeacherDetailPage.Designer.cs">
       <DependentUpon>TeacherDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TeacherPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TeacherPage.Designer.cs">
+      <DependentUpon>TeacherPage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -272,8 +290,17 @@
     <EmbeddedResource Include="UI\StudentDetailPage.resx">
       <DependentUpon>StudentDetailPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\StudentPage.resx">
+      <DependentUpon>StudentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TeacherActivityDetail.resx">
+      <DependentUpon>TeacherActivityDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\TeacherDetailPage.resx">
       <DependentUpon>TeacherDetailPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TeacherPage.resx">
+      <DependentUpon>TeacherPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
