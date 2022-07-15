@@ -31,8 +31,6 @@ namespace KinderGarten.UI
         {
             this.activitiesdvg = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.addActivitybtn = new System.Windows.Forms.Button();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.ageGrouptxt = new System.Windows.Forms.TextBox();
             this.periodtxt = new System.Windows.Forms.TextBox();
@@ -44,6 +42,8 @@ namespace KinderGarten.UI
             this.addStudentbtn = new System.Windows.Forms.Button();
             this.addstudentcmb = new System.Windows.Forms.ComboBox();
             this.studentListdgv = new System.Windows.Forms.DataGridView();
+            this.closebtn = new System.Windows.Forms.Button();
+            this.addActivitybtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesdvg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,7 +64,6 @@ namespace KinderGarten.UI
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.addActivitybtn);
-            this.groupBox1.Controls.Add(this.deletebtn);
             this.groupBox1.Controls.Add(this.updatebtn);
             this.groupBox1.Controls.Add(this.ageGrouptxt);
             this.groupBox1.Controls.Add(this.periodtxt);
@@ -77,26 +76,6 @@ namespace KinderGarten.UI
             this.groupBox1.Size = new System.Drawing.Size(1060, 302);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
-            // addActivitybtn
-            // 
-            this.addActivitybtn.Location = new System.Drawing.Point(748, 229);
-            this.addActivitybtn.Name = "addActivitybtn";
-            this.addActivitybtn.Size = new System.Drawing.Size(218, 67);
-            this.addActivitybtn.TabIndex = 11;
-            this.addActivitybtn.Text = "Hinzufügen";
-            this.addActivitybtn.UseVisualStyleBackColor = true;
-            this.addActivitybtn.Click += new System.EventHandler(this.addActivitybtn_Click);
-            // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(748, 134);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(218, 67);
-            this.deletebtn.TabIndex = 10;
-            this.deletebtn.Text = "Löschen";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn
             // 
@@ -198,11 +177,32 @@ namespace KinderGarten.UI
             this.studentListdgv.Size = new System.Drawing.Size(831, 535);
             this.studentListdgv.TabIndex = 4;
             // 
+            // closebtn
+            // 
+            this.closebtn.Location = new System.Drawing.Point(22, 969);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(164, 74);
+            this.closebtn.TabIndex = 6;
+            this.closebtn.Text = "Verlassen";
+            this.closebtn.UseVisualStyleBackColor = true;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
+            // 
+            // addActivitybtn
+            // 
+            this.addActivitybtn.Location = new System.Drawing.Point(748, 143);
+            this.addActivitybtn.Name = "addActivitybtn";
+            this.addActivitybtn.Size = new System.Drawing.Size(218, 74);
+            this.addActivitybtn.TabIndex = 10;
+            this.addActivitybtn.Text = "Hinzufügen";
+            this.addActivitybtn.UseVisualStyleBackColor = true;
+            this.addActivitybtn.Click += new System.EventHandler(this.addActivitybtn_Click_1);
+            // 
             // TeacherActivityDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.closebtn);
             this.Controls.Add(this.studentListdgv);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -223,8 +223,6 @@ namespace KinderGarten.UI
 
         private System.Windows.Forms.DataGridView activitiesdvg;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button addActivitybtn;
-        private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.TextBox ageGrouptxt;
         private System.Windows.Forms.TextBox periodtxt;
@@ -236,5 +234,7 @@ namespace KinderGarten.UI
         private System.Windows.Forms.Button addStudentbtn;
         private System.Windows.Forms.ComboBox addstudentcmb;
         private System.Windows.Forms.DataGridView studentListdgv;
+        private System.Windows.Forms.Button closebtn;
+        private System.Windows.Forms.Button addActivitybtn;
     }
 }

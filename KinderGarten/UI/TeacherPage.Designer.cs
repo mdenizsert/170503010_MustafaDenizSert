@@ -49,6 +49,7 @@ namespace KinderGarten.UI
             this.label6 = new System.Windows.Forms.Label();
             this.classesdgv = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.logoutbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classesdgv)).BeginInit();
             this.SuspendLayout();
@@ -238,7 +239,7 @@ namespace KinderGarten.UI
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(1384, 586);
+            this.button1.Location = new System.Drawing.Point(733, 586);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(409, 112);
             this.button1.TabIndex = 11;
@@ -246,11 +247,22 @@ namespace KinderGarten.UI
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.Location = new System.Drawing.Point(1512, 586);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(281, 112);
+            this.logoutbtn.TabIndex = 12;
+            this.logoutbtn.Text = "Ausloggen";
+            this.logoutbtn.UseVisualStyleBackColor = true;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
+            // 
             // TeacherPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1822, 738);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.classesdgv);
             this.Controls.Add(this.label6);
@@ -289,5 +301,6 @@ namespace KinderGarten.UI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView classesdgv;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }

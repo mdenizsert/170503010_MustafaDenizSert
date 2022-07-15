@@ -32,22 +32,22 @@ namespace KinderGarten.UI
             this.closebtn = new System.Windows.Forms.Button();
             this.adminsdgv = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.adminPasswordtxt = new System.Windows.Forms.TextBox();
+            this.adminPhonetxt = new System.Windows.Forms.TextBox();
+            this.adminAddresstxt = new System.Windows.Forms.TextBox();
+            this.adminBirthdatetxt = new System.Windows.Forms.TextBox();
+            this.adminEmailtxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.adminNachnametxt = new System.Windows.Forms.TextBox();
             this.adminNametxt = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.adminEmailtxt = new System.Windows.Forms.TextBox();
-            this.adminBirthdatetxt = new System.Windows.Forms.TextBox();
-            this.adminAddresstxt = new System.Windows.Forms.TextBox();
-            this.adminPhonetxt = new System.Windows.Forms.TextBox();
-            this.adminPasswordtxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.adminsdgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,7 @@ namespace KinderGarten.UI
             this.closebtn.TabIndex = 4;
             this.closebtn.Text = "Verlassen";
             this.closebtn.UseVisualStyleBackColor = true;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
             // adminsdgv
             // 
@@ -95,6 +96,91 @@ namespace KinderGarten.UI
             this.groupBox1.Size = new System.Drawing.Size(1060, 233);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // adminPasswordtxt
+            // 
+            this.adminPasswordtxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.adminPasswordtxt.Location = new System.Drawing.Point(544, 134);
+            this.adminPasswordtxt.Name = "adminPasswordtxt";
+            this.adminPasswordtxt.Size = new System.Drawing.Size(144, 22);
+            this.adminPasswordtxt.TabIndex = 21;
+            // 
+            // adminPhonetxt
+            // 
+            this.adminPhonetxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.adminPhonetxt.Location = new System.Drawing.Point(544, 81);
+            this.adminPhonetxt.Name = "adminPhonetxt";
+            this.adminPhonetxt.Size = new System.Drawing.Size(144, 22);
+            this.adminPhonetxt.TabIndex = 20;
+            // 
+            // adminAddresstxt
+            // 
+            this.adminAddresstxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.adminAddresstxt.Location = new System.Drawing.Point(544, 32);
+            this.adminAddresstxt.Name = "adminAddresstxt";
+            this.adminAddresstxt.Size = new System.Drawing.Size(144, 22);
+            this.adminAddresstxt.TabIndex = 19;
+            // 
+            // adminBirthdatetxt
+            // 
+            this.adminBirthdatetxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.adminBirthdatetxt.Location = new System.Drawing.Point(200, 179);
+            this.adminBirthdatetxt.Name = "adminBirthdatetxt";
+            this.adminBirthdatetxt.Size = new System.Drawing.Size(144, 22);
+            this.adminBirthdatetxt.TabIndex = 18;
+            // 
+            // adminEmailtxt
+            // 
+            this.adminEmailtxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.adminEmailtxt.Location = new System.Drawing.Point(200, 134);
+            this.adminEmailtxt.Name = "adminEmailtxt";
+            this.adminEmailtxt.Size = new System.Drawing.Size(144, 22);
+            this.adminEmailtxt.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(391, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 23);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Password";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(391, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 23);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Telefonnummer";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(391, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 23);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Adresse";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(25, 178);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Geburtsdatum";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(25, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Email";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // deletebtn
             // 
@@ -149,91 +235,6 @@ namespace KinderGarten.UI
             this.label31.TabIndex = 2;
             this.label31.Text = "Name";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(25, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 23);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Email";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(25, 178);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 23);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Geburtsdatum";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(391, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 23);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Adresse";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(391, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 23);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Telefonnummer";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(391, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 23);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Password";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminEmailtxt
-            // 
-            this.adminEmailtxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminEmailtxt.Location = new System.Drawing.Point(200, 134);
-            this.adminEmailtxt.Name = "adminEmailtxt";
-            this.adminEmailtxt.Size = new System.Drawing.Size(144, 22);
-            this.adminEmailtxt.TabIndex = 17;
-            // 
-            // adminBirthdatetxt
-            // 
-            this.adminBirthdatetxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminBirthdatetxt.Location = new System.Drawing.Point(200, 179);
-            this.adminBirthdatetxt.Name = "adminBirthdatetxt";
-            this.adminBirthdatetxt.Size = new System.Drawing.Size(144, 22);
-            this.adminBirthdatetxt.TabIndex = 18;
-            // 
-            // adminAddresstxt
-            // 
-            this.adminAddresstxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminAddresstxt.Location = new System.Drawing.Point(544, 32);
-            this.adminAddresstxt.Name = "adminAddresstxt";
-            this.adminAddresstxt.Size = new System.Drawing.Size(144, 22);
-            this.adminAddresstxt.TabIndex = 19;
-            // 
-            // adminPhonetxt
-            // 
-            this.adminPhonetxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminPhonetxt.Location = new System.Drawing.Point(544, 81);
-            this.adminPhonetxt.Name = "adminPhonetxt";
-            this.adminPhonetxt.Size = new System.Drawing.Size(144, 22);
-            this.adminPhonetxt.TabIndex = 20;
-            // 
-            // adminPasswordtxt
-            // 
-            this.adminPasswordtxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminPasswordtxt.Location = new System.Drawing.Point(544, 134);
-            this.adminPasswordtxt.Name = "adminPasswordtxt";
-            this.adminPasswordtxt.Size = new System.Drawing.Size(144, 22);
-            this.adminPasswordtxt.TabIndex = 21;
             // 
             // AdminDetailPage
             // 

@@ -18,6 +18,7 @@ namespace KinderGarten.UI
         private EfStudentDal _studentDal;
         private EfClassDal _classDal;
         private Teacher _currentTeacher;
+        public int passingId;
 
         public TeacherPage()
         {
@@ -73,7 +74,17 @@ namespace KinderGarten.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            passingId = _currentTeacher.Id;
+            var form = new TeacherActivityDetail(this);
+            form.ShowDialog();
+            
+        }
 
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            var form = new Login();
+            form.Show();
+            this.Hide();
         }
     }
 }

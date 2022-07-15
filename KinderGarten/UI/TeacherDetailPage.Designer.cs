@@ -60,6 +60,7 @@ namespace KinderGarten.UI
             this.closebtn.TabIndex = 5;
             this.closebtn.Text = "Verlassen";
             this.closebtn.UseVisualStyleBackColor = true;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
             // teachersdgv
             // 

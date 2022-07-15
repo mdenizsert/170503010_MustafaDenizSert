@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KinderGarten.DataAccess.Concrete;
+using KinderGarten.Entities.UI;
 
 namespace KinderGarten.UI
 {
@@ -113,6 +114,23 @@ namespace KinderGarten.UI
             {
                 Console.WriteLine("Input string is invalid.");
                 return -1;
+            }
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            var form = new AdminPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            if (tempId > 0)
+            {
+                _studentDal.Delete(_studentDal.Get(t => t.Id == tempId));
+
+                PopulateTable();
             }
         }
     }

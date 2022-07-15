@@ -217,5 +217,12 @@ namespace KinderGarten.Entities.UI
             updateClassCombobox();
             updateStudentCombobox();
         }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            var form = new Login();
+            form.Show();
+            this.Hide();
+        }
     }
 }

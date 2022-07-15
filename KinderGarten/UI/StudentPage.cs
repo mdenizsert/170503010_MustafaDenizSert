@@ -27,6 +27,7 @@ namespace KinderGarten.UI
             _studentDal = new EfStudentDal();
             _activityDal = new EfActivityDal();
             _activityStudentDal = new EfActivityStudentDal();
+            _classDal = new EfClassDal();
             _currentStudent = _studentDal.Get(s => s.Email == Login.currentStudentEmail);
         }
 
@@ -66,6 +67,13 @@ namespace KinderGarten.UI
             }
 
             activitiesdvg.DataSource = activities;
+        }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            var form = new Login();
+            form.Show();
+            this.Hide();
         }
     }
 }

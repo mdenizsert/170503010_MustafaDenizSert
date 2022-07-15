@@ -41,6 +41,7 @@ namespace KinderGarten.UI
             this.medicinelbl = new System.Windows.Forms.Label();
             this.classlbl = new System.Windows.Forms.Label();
             this.emaillbl = new System.Windows.Forms.Label();
+            this.logoutbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesdvg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace KinderGarten.UI
             // activitiesdvg
             // 
             this.activitiesdvg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.activitiesdvg.Location = new System.Drawing.Point(162, 336);
+            this.activitiesdvg.Location = new System.Drawing.Point(92, 336);
             this.activitiesdvg.Name = "activitiesdvg";
             this.activitiesdvg.RowHeadersWidth = 51;
             this.activitiesdvg.RowTemplate.Height = 24;
@@ -164,11 +165,22 @@ namespace KinderGarten.UI
             this.emaillbl.Text = "label10";
             this.emaillbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.Location = new System.Drawing.Point(1055, 759);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(218, 112);
+            this.logoutbtn.TabIndex = 13;
+            this.logoutbtn.Text = "Ausloggen";
+            this.logoutbtn.UseVisualStyleBackColor = true;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
+            // 
             // StudentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 883);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.emaillbl);
             this.Controls.Add(this.classlbl);
             this.Controls.Add(this.medicinelbl);
@@ -203,5 +215,6 @@ namespace KinderGarten.UI
         private System.Windows.Forms.Label medicinelbl;
         private System.Windows.Forms.Label classlbl;
         private System.Windows.Forms.Label emaillbl;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }

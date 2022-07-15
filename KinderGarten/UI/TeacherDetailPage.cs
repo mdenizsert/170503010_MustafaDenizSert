@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KinderGarten.DataAccess.Concrete;
+using KinderGarten.Entities.UI;
 
 namespace KinderGarten.UI
 {
@@ -72,6 +73,13 @@ namespace KinderGarten.UI
 
                 PopulateTable();
             }
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            var form = new AdminPage();
+            form.Show();
+            this.Hide();
         }
     }
 }

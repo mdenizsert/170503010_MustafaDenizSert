@@ -120,6 +120,7 @@ namespace KinderGarten.Entities.UI
             this.logoutbtn.TabIndex = 0;
             this.logoutbtn.Text = "Ausloggen";
             this.logoutbtn.UseVisualStyleBackColor = true;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
             // groupBox1
             // 

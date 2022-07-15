@@ -32,6 +32,12 @@ namespace KinderGarten.UI
             this.studentsdgv = new System.Windows.Forms.DataGridView();
             this.closebtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.studentClasscmb = new System.Windows.Forms.ComboBox();
+            this.labelll = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.studentParentNametxt = new System.Windows.Forms.TextBox();
+            this.studentMedicinetxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.studentPasswordtxt = new System.Windows.Forms.TextBox();
             this.studentPhonetxt = new System.Windows.Forms.TextBox();
             this.studentAddresstxt = new System.Windows.Forms.TextBox();
@@ -48,12 +54,6 @@ namespace KinderGarten.UI
             this.studentNametxt = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.studentMedicinetxt = new System.Windows.Forms.TextBox();
-            this.studentParentNametxt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelll = new System.Windows.Forms.Label();
-            this.studentClasscmb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentsdgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@ namespace KinderGarten.UI
             this.closebtn.TabIndex = 7;
             this.closebtn.Text = "Verlassen";
             this.closebtn.UseVisualStyleBackColor = true;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
             // groupBox1
             // 
@@ -107,6 +108,57 @@ namespace KinderGarten.UI
             this.groupBox1.Size = new System.Drawing.Size(1060, 297);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            // 
+            // studentClasscmb
+            // 
+            this.studentClasscmb.FormattingEnabled = true;
+            this.studentClasscmb.Location = new System.Drawing.Point(544, 232);
+            this.studentClasscmb.Name = "studentClasscmb";
+            this.studentClasscmb.Size = new System.Drawing.Size(144, 24);
+            this.studentClasscmb.TabIndex = 29;
+            // 
+            // labelll
+            // 
+            this.labelll.Location = new System.Drawing.Point(391, 232);
+            this.labelll.Name = "labelll";
+            this.labelll.Size = new System.Drawing.Size(147, 23);
+            this.labelll.TabIndex = 28;
+            this.labelll.Text = "Class";
+            this.labelll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(391, 179);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(147, 23);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Elternname";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // studentParentNametxt
+            // 
+            this.studentParentNametxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.studentParentNametxt.Location = new System.Drawing.Point(544, 179);
+            this.studentParentNametxt.Name = "studentParentNametxt";
+            this.studentParentNametxt.Size = new System.Drawing.Size(144, 22);
+            this.studentParentNametxt.TabIndex = 26;
+            // 
+            // studentMedicinetxt
+            // 
+            this.studentMedicinetxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.studentMedicinetxt.Location = new System.Drawing.Point(200, 232);
+            this.studentMedicinetxt.Name = "studentMedicinetxt";
+            this.studentMedicinetxt.Size = new System.Drawing.Size(144, 22);
+            this.studentMedicinetxt.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(25, 231);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 23);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Medizin";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentPasswordtxt
             // 
@@ -201,6 +253,7 @@ namespace KinderGarten.UI
             this.deletebtn.TabIndex = 10;
             this.deletebtn.Text = "Löschen";
             this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn
             // 
@@ -245,57 +298,6 @@ namespace KinderGarten.UI
             this.label31.TabIndex = 2;
             this.label31.Text = "Name";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(25, 231);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 23);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Medizin";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // studentMedicinetxt
-            // 
-            this.studentMedicinetxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.studentMedicinetxt.Location = new System.Drawing.Point(200, 232);
-            this.studentMedicinetxt.Name = "studentMedicinetxt";
-            this.studentMedicinetxt.Size = new System.Drawing.Size(144, 22);
-            this.studentMedicinetxt.TabIndex = 24;
-            // 
-            // studentParentNametxt
-            // 
-            this.studentParentNametxt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.studentParentNametxt.Location = new System.Drawing.Point(544, 179);
-            this.studentParentNametxt.Name = "studentParentNametxt";
-            this.studentParentNametxt.Size = new System.Drawing.Size(144, 22);
-            this.studentParentNametxt.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(391, 179);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 23);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Elternname";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelll
-            // 
-            this.labelll.Location = new System.Drawing.Point(391, 232);
-            this.labelll.Name = "labelll";
-            this.labelll.Size = new System.Drawing.Size(147, 23);
-            this.labelll.TabIndex = 28;
-            this.labelll.Text = "Class";
-            this.labelll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // studentClasscmb
-            // 
-            this.studentClasscmb.FormattingEnabled = true;
-            this.studentClasscmb.Location = new System.Drawing.Point(544, 232);
-            this.studentClasscmb.Name = "studentClasscmb";
-            this.studentClasscmb.Size = new System.Drawing.Size(144, 24);
-            this.studentClasscmb.TabIndex = 29;
             // 
             // StudentDetailPage
             // 

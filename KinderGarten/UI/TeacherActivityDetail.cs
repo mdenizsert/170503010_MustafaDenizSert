@@ -19,17 +19,20 @@ namespace KinderGarten.UI
         private EfActivityStudentDal _activityStudentDal;
         private EfTeacherDal _teacherDal;
         private EfStudentDal _studentDal;
-        private Teacher _currentTeacher;
+        //private Teacher _currentTeacher;
         private int tempId;
-        
-        public TeacherActivityDetail()
+        private TeacherPage _teacherPage;
+
+        public TeacherActivityDetail(TeacherPage teacherPage)
         {
             InitializeComponent();
 
             _activityDal = new EfActivityDal();
             _activityStudentDal = new EfActivityStudentDal();
             _activityTeacherDal = new EfActivityTeacherDal();
-            _currentTeacher = _teacherDal.Get(t => t.Email == Login.currentTeacherEmail);
+            _studentDal = new EfStudentDal();
+            //_currentTeacher = _teacherDal.Get(t => t.Email == Login.currentTeacherEmail);
+            this._teacherPage = teacherPage;
         }
 
         private void TeacherActivityDetail_Load(object sender, EventArgs e)
@@ -41,7 +44,7 @@ namespace KinderGarten.UI
         private void PopulateTable()
         {
             var activities = new List<Activity>();
-            var activityTeachers = _activityTeacherDal.GetAll(at => at.TeacherId == _currentTeacher.Id);
+            var activityTeachers = _activityTeacherDal.GetAll(at => at.TeacherId == _teacherPage.passingId);
             foreach (var at in activityTeachers)
             {
                 var activityId = at.ActivityId;
@@ -52,18 +55,7 @@ namespace KinderGarten.UI
             activitiesdvg.DataSource = activities;
         }
 
-        private void addActivitybtn_Click(object sender, EventArgs e)
-        {
-            var activity = new Entities.Activity
-            {
-                Content = contexttxt.Text,
-                AgeGroup = ageGrouptxt.Text,
-                Period = periodtxt.Text
-            };
-
-            _activityDal.Add(activity);
-            PopulateTable();
-        }
+        
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
@@ -146,6 +138,33 @@ namespace KinderGarten.UI
             var thisStudent = _studentDal.Get(s => s.Name + " " + s.LastName == studentName);
             var studentId = thisStudent.Id;
             return studentId;
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            var form = new TeacherPage();
+            form.Show();
+            this.Hide();
+        }
+
+        private void addActivitybtn_Click_1(object sender, EventArgs e)
+        {
+            var activity = new Entities.Activity
+            {
+                Content = contexttxt.Text,
+                AgeGroup = ageGrouptxt.Text,
+                Period = periodtxt.Text
+            };
+
+            _activityDal.Add(activity);
+
+            var activityTeacher = new Entities.ActivityTeacher()
+            {
+                ActivityId = activity.Id,
+                TeacherId = _teacherPage.passingId
+            };
+            _activityTeacherDal.Add(activityTeacher);
+            PopulateTable();
         }
     }
 }
